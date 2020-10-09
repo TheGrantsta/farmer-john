@@ -1,7 +1,10 @@
 import TripSequence from "./tripSequence"
 
-it("test something is returned", ()=>{
-    const tripSequence = new TripSequence();
+it("test combination one bag of corn and zero geese is valid", () => {
+    const numberOfBags = 1;
+    const numberOfGeese = 0;
 
-    expect(tripSequence.IsValid()).toBe(true);
+    let isValid = new TripSequence().IsValid(numberOfBags, numberOfGeese);
+
+    expect(isValid).toBe(true);
 })
