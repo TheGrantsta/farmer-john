@@ -33,7 +33,7 @@ class CalcInput extends React.Component {
                 <h3 data-testid="Heading">Select the number of bags of corn and geese...</h3>
                 <fieldset>
                     <form onSubmit={this.handleSubmit}>
-                        <label>Bags of corn&nbsp;
+                        <label>Bags of corn
                         <select value={this.state.bagsOfCorn} onChange={this.handleChangeCorn}>
                                 <option value="0" defaultValue="0">0</option>
                                 <option value="1">1</option>
@@ -47,7 +47,7 @@ class CalcInput extends React.Component {
                                 <option value="9">9</option>
                             </select>
                         </label>
-                        <label>Geese&nbsp;
+                        <label>Geese
                         <select value={this.state.numberOfGeese} onChange={this.handleChangeGeese}>
                                 <option value="0" defaultValue="0">0</option>
                                 <option value="1">1</option>
