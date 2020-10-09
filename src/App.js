@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.png";
 import "./App.css";
+import "./form.css";
 
 import CalcInput from "./calcInputs"
 
