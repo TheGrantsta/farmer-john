@@ -2,7 +2,7 @@ import React from "react"
 
 const CalcCost = (props) => {
     function currencyCost() {
-        if (props.numberOfTrips === 0){
+        if (props.numberOfTrips === 0) {
             return "";
         }
 
@@ -10,13 +10,15 @@ const CalcCost = (props) => {
             style: 'currency',
             currency: 'GBP',
             minimumFractionDigits: 2
-          });
+        });
 
         const price = props.numberOfTrips * .5;
 
         const trips = props.numberOfTrips === 1 ? "trip" : "trips";
 
-        return props.numberOfTrips + " return " + trips + " costs: " + formatter.format(price);
+        const costs = props.numberOfTrips === 1 ? "costs" : "cost";
+
+        return props.numberOfTrips + " return " + trips + " " + costs + ": " + formatter.format(price);
     }
 
     return (
