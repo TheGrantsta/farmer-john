@@ -18,6 +18,12 @@ afterEach(() => {
     container = null;
 })
 
+test("display nothing when number of trips is 0", ()=>{
+    act(() => { render(<CalcCost numberOfTrips={0} />, container) })
+
+    expect(container.textContent).toBe("");
+});
+
 test("calculate cost for one trip", () =>{
     act(() => { render(<CalcCost numberOfTrips={1} />, container) })
 

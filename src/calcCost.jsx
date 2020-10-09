@@ -2,6 +2,10 @@ import React from "react"
 
 const CalcCost = (props) => {
     function currencyCost() {
+        if (props.numberOfTrips === 0){
+            return "";
+        }
+
         const formatter = new Intl.NumberFormat('en-GB', {
             style: 'currency',
             currency: 'GBP',
