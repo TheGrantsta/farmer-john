@@ -10,7 +10,9 @@ const CalcCost = (props) => {
 
         const price = props.numberOfTrips * .5;
 
-        return props.numberOfTrips + " return trip costs: " + formatter.format(price);
+        const trips = props.numberOfTrips === 1 ? "trip" : "trips";
+
+        return props.numberOfTrips + " return " + trips + " costs: " + formatter.format(price);
     }
 
     return (
