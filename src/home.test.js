@@ -1,7 +1,7 @@
 import React from "react"
 import { render, unmountComponentAtNode } from "react-dom"
 import { act } from "react-dom/test-utils"
-import CalcInputs from "./calcInputs"
+import Home from "./home"
 
 let container = null
 
@@ -18,8 +18,11 @@ afterEach(() => {
     container = null;
 })
 
-test("calc inputs should include header", () => {
-    act(() => { render(<CalcInputs />, container) })
 
-    expect(container.querySelector("[data-testid='Calc-Heading']").textContent).toBe("Select the number of bags of corn and geese...")
-})
+test("renders learn react link", () => {
+  const fakeHandleSubmit = () => { };
+
+  act(() => { render(<Home onSubmitHandler={fakeHandleSubmit} />, container) })
+
+  expect(container.querySelector("[data-testid='Home-Heading']").textContent).toBe("Welcome Farmer John!");
+});
