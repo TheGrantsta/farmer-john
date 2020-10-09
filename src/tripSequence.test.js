@@ -54,6 +54,15 @@ it("test combination one bag of corn and one goose is valid", ()=>{
     expect(isValid).toBe(true);
 })
 
+it("test combination two bags of corn and two goose is invalid", ()=>{
+    const numberOfBags = 2;
+    const numberOfGeese = 2;
+
+    let isValid = new TripSequence().IsValid(numberOfBags, numberOfGeese);
+
+    expect(isValid).toBe(false);
+})
+
 it("test combination three bags of corn and one goose is invalid", () => {
     const numberOfBags = 3;
     const numberOfGeese = 1;
