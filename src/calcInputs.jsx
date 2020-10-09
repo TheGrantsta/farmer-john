@@ -5,7 +5,7 @@ class CalcInput extends React.Component {
     render() {
         return (
             <div>
-                <h3 data-testid="Calc-Heading">Select the number of bags of corn and geese...</h3>
+                <h3 data-testid="Calc-Heading">Please select the number of bags of corn and geese...</h3>
                 <fieldset>
                     <form onSubmit={this.props.onSubmitHandler}>
                         <label>Bags of corn
