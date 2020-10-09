@@ -35,3 +35,4 @@ it("test combination zero bags of corn and nine geese is valid", () => {
 
     expect(isValid).toBe(true);
 })
+
