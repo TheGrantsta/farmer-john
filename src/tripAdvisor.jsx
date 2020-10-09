@@ -5,27 +5,22 @@ const TripAdvisor = (props) => {
     let trips = [];
 
     if (props.numberOfBags > 0 && props.numberOfGeese === 0) {
-        for (var i = 1; i <= props.numberOfBags; i++) {
-            trips.push("Trip " + i + ": take bag of corn; come back");
-        }
+        buildTripSequenceDisplay(props.numberOfBags, "bag of corn", 1)
     }
 
     if (props.numberOfBags === 0 && props.numberOfGeese > 0) {
-        for (var i = 1; i <= props.numberOfGeese; i++) {
-            trips.push("Trip " + i + ": take goose; come back");
-        }
+        buildTripSequenceDisplay(props.numberOfGeese, "goose", 1)
     }
 
     if (props.numberOfBags === 1 && props.numberOfGeese === 1) {
-        let tripCnt = 1
-        for (var i = 1; i <= props.numberOfGeese; i++) {
-            trips.push("Trip " + tripCnt + ": take goose; come back");
-        }
-        
-        tripCnt++;
+        buildTripSequenceDisplay(props.numberOfGeese, "goose", 1)
+        buildTripSequenceDisplay(props.numberOfGeese, "bag of corn", 2)
+    }
 
-        for (var i = 1; i <= props.numberOfBags; i++) {
-            trips.push("Trip " + tripCnt + ": take bag of corn; come back");
+    function buildTripSequenceDisplay(numberOfTrips, item, tripCount) {
+        for (var i = 1; i <= numberOfTrips; i++) {
+            trips.push("Trip " + tripCount + ": take " + item + "; come back");
+            tripCount++;
         }
     }
 
