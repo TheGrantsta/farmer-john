@@ -1,6 +1,7 @@
 import React from "react"
 import logo from "./logo.png";
 import CalcInput from "./calcInputs"
+import CalcCost from "./calcCost"
 
 class Home extends React.Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class Home extends React.Component {
                                 changeCornHandler={this.handleChangeCorn}
                                 changeGreeseHandler={this.handleChangeGeese}
                                 onSubmitHandler={this.handleSubmit} />
+                            <CalcCost numberOfTrips={this.state.bagsOfCorn + this.state.numberOfGeese} />
                         </div>
                     </div>
                 </section>
