@@ -29,3 +29,9 @@ test("display trip sequence when only transporting bags of corn", ()=>{
 
     expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take bag of corn; come backTrip 2: take bag of corn; come back");
 });
+
+test("display trip sequence when only transporting geese", ()=>{
+    act(() => { render(<TripAdvisor numberOfBags={0} numberOfGeese={2} />, container) })
+
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take goose; come backTrip 2: take goose; come back");
+});

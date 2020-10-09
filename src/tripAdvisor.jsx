@@ -10,6 +10,12 @@ const TripAdvisor = (props) => {
         }
     }
 
+    if (props.numberOfBags === 0 && props.numberOfGeese > 0) {
+        for (var i = 1; i <= props.numberOfGeese; i++) {
+            trips.push("Trip " + i + ": take goose; come back");
+        }
+    }
+
     return (
         <div>
             <div>
