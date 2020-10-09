@@ -17,24 +17,18 @@ class Home extends React.Component {
     }
 
     handleChangeCorn(event) {
-        this.setState({ bagsOfCorn: event.target.value });
+        this.setState({ bagsOfCorn: parseInt(event.target.value) });
     }
 
     handleChangeGeese(event) {
-        this.setState({ numberOfGeese: event.target.value });
+        this.setState({ numberOfGeese: parseInt(event.target.value) });
     }
 
-    handleSubmit() {
-
-
-        try {
-            alert(this.state.bagsOfCorn)
-        } catch (error) {
-            alert(error)
-        }
-
-
-
+    handleSubmit(event) {
+        console.log("submitted!")
+        console.log(this.state.bagsOfCorn)
+        console.log(this.state.numberOfGeese)
+        event.preventDefault();
     }
     render() {
         return (
@@ -48,7 +42,12 @@ class Home extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-md-12 col-sm-12 col-xss-12">
-                            <CalcInput onSubmitHandler={this.handleSubmit} />
+                            <CalcInput
+                                bagsOfCorn={this.state.bagsOfCorn}
+                                numberOfGeese={this.state.numberOfGeese}
+                                changeCornHandler={this.handleChangeCorn}
+                                changeGreeseHandler={this.handleChangeGeese}
+                                onSubmitHandler={this.handleSubmit} />
                         </div>
                     </div>
                 </section>

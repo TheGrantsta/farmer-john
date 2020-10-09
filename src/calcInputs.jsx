@@ -1,7 +1,7 @@
 import React from "react";
 
 class CalcInput extends React.Component {
-
+    
     render() {
         return (
             <div>
@@ -9,8 +9,8 @@ class CalcInput extends React.Component {
                 <fieldset>
                     <form onSubmit={this.props.onSubmitHandler}>
                         <label>Bags of corn
-                        <select value={this.props.bagsOfCorn} onChange={this.handleChangeCorn}>
-                                <option value="0" defaultValue="0">0</option>
+                        <select value={this.props.bagsOfCorn} onChange={this.props.changeCornHandler}>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -23,8 +23,8 @@ class CalcInput extends React.Component {
                             </select>
                         </label>
                         <label>Geese
-                        <select value={this.props.numberOfGeese} onChange={this.handleChangeGeese}>
-                                <option value="0" defaultValue="0">0</option>
+                        <select value={this.props.numberOfGeese} onChange={this.props.changeGreeseHandler}>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
