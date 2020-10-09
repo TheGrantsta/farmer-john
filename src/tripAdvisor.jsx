@@ -19,7 +19,7 @@ const TripAdvisor = (props) => {
 
     function buildTripSequenceDisplay(numberOfTrips, item, tripCount) {
         for (var i = 1; i <= numberOfTrips; i++) {
-            trips.push("Trip " + tripCount + ": take " + item + "; come back");
+            trips.push("Trip " + tripCount + ": take a " + item + "; come back");
             tripCount++;
         }
     }

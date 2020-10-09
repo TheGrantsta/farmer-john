@@ -27,17 +27,17 @@ test("display nothing when both inputs are both 0", ()=>{
 test("display trip sequence when only transporting bags of corn", ()=>{
     act(() => { render(<TripAdvisor numberOfBags={2} numberOfGeese={0} />, container) })
 
-    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take bag of corn; come backTrip 2: take bag of corn; come back");
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take a bag of corn; come backTrip 2: take a bag of corn; come back");
 });
 
 test("display trip sequence when only transporting geese", ()=>{
     act(() => { render(<TripAdvisor numberOfBags={0} numberOfGeese={2} />, container) })
 
-    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take goose; come backTrip 2: take goose; come back");
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take a goose; come backTrip 2: take a goose; come back");
 });
 
 test("display trip sequence when transporting one bag of corn and one goose", ()=>{
     act(() => { render(<TripAdvisor numberOfBags={1} numberOfGeese={1} />, container) })
 
-    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take goose; come backTrip 2: take bag of corn; come back");
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take a goose; come backTrip 2: take a bag of corn; come back");
 });
