@@ -5,7 +5,7 @@ class TripSequence {
         if ((numberOfBags > 0 && numberOfGeese === 0) || (numberOfBags === 0 && numberOfGeese > 0)) {
             return true;
         }
-console.log(numberOfBags);
+
         return false;
     }
 }
