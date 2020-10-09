@@ -36,7 +36,6 @@ class CalcInput extends React.Component {
                                 <option value="9">9</option>
                             </select>
                         </label>
-                        <input type="submit" id="calc-submit" value="calculate..." />
                     </form>
                 </fieldset>
             </div>

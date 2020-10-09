@@ -14,7 +14,6 @@ class Home extends React.Component {
 
         this.handleChangeCorn = this.handleChangeCorn.bind(this);
         this.handleChangeGeese = this.handleChangeGeese.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChangeCorn(event) {
@@ -25,12 +24,6 @@ class Home extends React.Component {
         this.setState({ numberOfGeese: parseInt(event.target.value) });
     }
 
-    handleSubmit(event) {
-        console.log("submitted!")
-        console.log(this.state.bagsOfCorn)
-        console.log(this.state.numberOfGeese)
-        event.preventDefault();
-    }
     render() {
         return (
             <div className="App">
@@ -47,8 +40,7 @@ class Home extends React.Component {
                                 bagsOfCorn={this.state.bagsOfCorn}
                                 numberOfGeese={this.state.numberOfGeese}
                                 changeCornHandler={this.handleChangeCorn}
-                                changeGreeseHandler={this.handleChangeGeese}
-                                onSubmitHandler={this.handleSubmit} />
+                                changeGreeseHandler={this.handleChangeGeese}/>
                             <CalcCost numberOfTrips={this.state.bagsOfCorn + this.state.numberOfGeese} />
                         </div>
                     </div>

@@ -20,9 +20,7 @@ afterEach(() => {
 
 
 test("renders learn react link", () => {
-  const fakeHandleSubmit = () => { };
-
-  act(() => { render(<Home onSubmitHandler={fakeHandleSubmit} />, container) })
+  act(() => { render(<Home />, container) })
 
   expect(container.querySelector("[data-testid='Home-Heading']").textContent).toBe("Welcome Farmer John!");
 });
