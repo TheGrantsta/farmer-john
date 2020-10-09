@@ -1,7 +1,7 @@
 import React from "react"
 import logo from "./logo.png";
 import CalcInput from "./calcInputs"
-import CalcCost from "./calcCost"
+import TripAdvisor from "./tripAdvisor"
 
 class Home extends React.Component {
     constructor(props) {
@@ -40,8 +40,12 @@ class Home extends React.Component {
                                 bagsOfCorn={this.state.bagsOfCorn}
                                 numberOfGeese={this.state.numberOfGeese}
                                 changeCornHandler={this.handleChangeCorn}
-                                changeGreeseHandler={this.handleChangeGeese}/>
-                            <CalcCost numberOfTrips={this.state.bagsOfCorn + this.state.numberOfGeese} />
+                                changeGreeseHandler={this.handleChangeGeese} />
+                        </div>
+                        <div>
+                            <TripAdvisor
+                                numberOfBags={this.state.bagsOfCorn}
+                                numberOfGeese={this.state.numberOfGeese} />
                         </div>
                     </div>
                 </section>

@@ -1,4 +1,5 @@
 import React from "react"
+import CalcCost from "./calcCost"
 
 const TripAdvisor = (props) => {
     let trips = [];
@@ -11,11 +12,16 @@ const TripAdvisor = (props) => {
 
     return (
         <div>
-            {
-                trips.map((item, i) => {
-                    return <p key={i}>{item}</p>
-                })
-            }
+            <div>
+                <CalcCost numberOfTrips={trips.length} />
+            </div>
+            <div data-testid="Trip-Sequence">
+                {
+                    trips.map((item, i) => {
+                        return <p key={i}>{item}</p>
+                    })
+                }
+            </div>
         </div>
     )
 }
