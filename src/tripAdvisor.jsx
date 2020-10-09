@@ -16,6 +16,19 @@ const TripAdvisor = (props) => {
         }
     }
 
+    if (props.numberOfBags === 1 && props.numberOfGeese === 1) {
+        let tripCnt = 1
+        for (var i = 1; i <= props.numberOfGeese; i++) {
+            trips.push("Trip " + tripCnt + ": take goose; come back");
+        }
+        
+        tripCnt++;
+
+        for (var i = 1; i <= props.numberOfBags; i++) {
+            trips.push("Trip " + tripCnt + ": take bag of corn; come back");
+        }
+    }
+
     return (
         <div>
             <div>
