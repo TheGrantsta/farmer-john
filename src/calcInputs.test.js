@@ -21,5 +21,5 @@ afterEach(() => {
 test("calc inputs should include header", () => {
     act(() => { render(<CalcInputs />, container) })
 
-    expect(container.textContent).toBe("Select the number of bags of corn and geese...")
+    expect(container.querySelector("[data-testid='Heading'").textContent).toBe("Select the number of bags of corn and geese...")
 })
