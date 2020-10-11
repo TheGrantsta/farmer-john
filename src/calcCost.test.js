@@ -18,26 +18,32 @@ afterEach(() => {
     container = null;
 })
 
-test("display nothing when number of trips is 0", ()=>{
-    act(() => { render(<CalcCost numberOfTrips={0} />, container) })
+test("display nothing when number of trips is 0", () => {
+    act(() => { render(<CalcCost isValid={true} numberOfTrips={0} />, container) })
 
     expect(container.textContent).toBe("");
 });
 
-test("calculate cost for one trip", () =>{
-    act(() => { render(<CalcCost numberOfTrips={1} />, container) })
+test("display nothing when steps are invalid", () => {
+    act(() => { render(<CalcCost isValid={false} numberOfTrips={1} />, container) })
+
+    expect(container.textContent).toBe("");
+});
+
+test("calculate cost for one trip", () => {
+    act(() => { render(<CalcCost isValid={true} numberOfTrips={1} />, container) })
 
     expect(container.textContent).toBe("1 return trip costs: £0.50");
 });
 
-test("calculate cost for two trips", () =>{
-    act(() => { render(<CalcCost numberOfTrips={2} />, container) })
+test("calculate cost for two trips", () => {
+    act(() => { render(<CalcCost isValid={true} numberOfTrips={2} />, container) })
 
     expect(container.textContent).toBe("2 return trips cost: £1.00");
 });
 
-test("calculate cost for three trips", () =>{
-    act(() => { render(<CalcCost numberOfTrips={3} />, container) })
+test("calculate cost for three trips", () => {
+    act(() => { render(<CalcCost isValid={true} numberOfTrips={3} />, container) })
 
     expect(container.textContent).toBe("3 return trips cost: £1.50");
 });

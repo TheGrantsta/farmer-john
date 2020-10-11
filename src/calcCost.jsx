@@ -2,7 +2,7 @@ import React from "react"
 
 const CalcCost = (props) => {
     function currencyCost() {
-        if (props.numberOfTrips === 0) {
+        if (!props.isValid || props.numberOfTrips === 0) {
             return "";
         }
 
