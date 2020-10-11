@@ -65,8 +65,3 @@ it("test combination one bag of corn and one goose is valid", ()=>{
     expect(steps.Sequence).toBe("take a bag of corn; come back|take a goose; come back");
     expect(steps.Repeat).toBe(0);
 })
-
-
-//todo: one of each; two geese and one bag of corn
-
-
