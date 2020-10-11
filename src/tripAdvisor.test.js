@@ -41,3 +41,15 @@ test("display trip sequence when transporting one bag of corn and one goose", ()
 
     expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take a bag of corn; come backTrip 2: take a goose; come back");
 });
+
+test("display trip sequence when transporting two bags of corn and one goose", ()=>{
+    act(() => { render(<TripAdvisor numberOfBags={2} numberOfGeese={1} />, container) })
+
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take the goose; come backTrip 2: take a bag of corn; bring back the gooseTrip 3: take a bag of corn; come backTrip 4: take the goose; come back");
+});
+
+test("display trip sequence when transporting one bag of corn and two geese", ()=>{
+    act(() => { render(<TripAdvisor numberOfBags={1} numberOfGeese={2} />, container) })
+
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take the bag of corn; come backTrip 2: take a goose; bring back the bag of cornTrip 3: take a goose; come backTrip 4: take the bag of corn; come back");
+});
