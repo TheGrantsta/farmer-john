@@ -1,27 +1,26 @@
 import React from "react"
+import TripSteps from "./tripSteps"
 import CalcCost from "./calcCost"
 
 const TripAdvisor = (props) => {
     let trips = [];
+    var steps = new TripSteps(props.numberOfBags, props.numberOfGeese);
 
-    if (props.numberOfBags > 0 && props.numberOfGeese === 0) {
-        buildTripSequenceDisplay(props.numberOfBags, "bag of corn", 1)
-    }
-
-    if (props.numberOfBags === 0 && props.numberOfGeese > 0) {
-        buildTripSequenceDisplay(props.numberOfGeese, "goose", 1)
-    }
-
-    if (props.numberOfBags === 1 && props.numberOfGeese === 1) {
-        buildTripSequenceDisplay(props.numberOfGeese, "goose", 1)
-        buildTripSequenceDisplay(props.numberOfGeese, "bag of corn", 2)
-    }
-
-    function buildTripSequenceDisplay(numberOfTrips, item, tripCount) {
-        for (var i = 1; i <= numberOfTrips; i++) {
-            trips.push("Trip " + tripCount + ": take a " + item + "; come back");
-            tripCount++;
+    if (steps.IsValid) {
+        if (steps.Repeat > 0) {
+            for (var i = 1; i <= steps.Repeat; i++) {
+                trips.push("Trip " + i + ": " + steps.Sequence);
+            }
+        } else {
+            if (steps.Sequence.length > 0) {
+                steps.Sequence.split("|").map((item, i) => {
+                    trips.push("Trip " + (i + 1) + ": " + item);
+                })
+            }
         }
+
+    } else {
+        trips.push(steps.Sequence);
     }
 
     return (
