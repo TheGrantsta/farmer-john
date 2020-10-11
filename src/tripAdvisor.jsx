@@ -6,9 +6,6 @@ const TripAdvisor = (props) => {
     let trips = [];
     var steps = new TripSteps(props.numberOfBags, props.numberOfGeese);
 
-    console.log("Number of bags of corn: " + props.numberOfBags);
-    console.log("Number of bags of geese: " + props.numberOfGeese);
-
     if (steps.IsValid) {
         if (steps.Repeat > 0) {
             for (var i = 1; i <= steps.Repeat; i++) {
@@ -25,12 +22,10 @@ const TripAdvisor = (props) => {
         trips.push(steps.Sequence);
     }
 
-    console.log("Steps is valid: " + steps.IsValid);
-
     return (
         <div>
             <div>
-                <CalcCost numberOfTrips={trips.length} />
+                <CalcCost isValid={steps.IsValid} numberOfTrips={trips.length} />
             </div>
             <div data-testid="Trip-Sequence">
                 {
