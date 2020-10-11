@@ -6,6 +6,9 @@ const TripAdvisor = (props) => {
     let trips = [];
     var steps = new TripSteps(props.numberOfBags, props.numberOfGeese);
 
+    console.log("Number of bags of corn: " + props.numberOfBags);
+    console.log("Number of bags of geese: " + props.numberOfGeese);
+
     if (steps.IsValid) {
         if (steps.Repeat > 0) {
             for (var i = 1; i <= steps.Repeat; i++) {
@@ -14,14 +17,15 @@ const TripAdvisor = (props) => {
         } else {
             if (steps.Sequence.length > 0) {
                 steps.Sequence.split("|").map((item, i) => {
-                    trips.push("Trip " + (i + 1) + ": " + item);
+                   return trips.push("Trip " + (i + 1) + ": " + item);
                 })
             }
         }
-
     } else {
         trips.push(steps.Sequence);
     }
+
+    console.log("Steps is valid: " + steps.IsValid);
 
     return (
         <div>

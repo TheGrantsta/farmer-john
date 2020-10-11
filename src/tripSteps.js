@@ -17,7 +17,7 @@ function TripSteps(numberOfBags, numberOfGeese) {
         steps.Sequence = "take the bag of corn; come back|take a goose; bring back the bag of corn|take a goose; come back|take the bag of corn; come back";
     }
 
-    if (numberOfBags > 0 && numberOfGeese === 0 || numberOfBags === 0 && numberOfGeese > 0) {
+    if ((numberOfBags > 0 && numberOfGeese === 0) || (numberOfBags === 0 && numberOfGeese > 0)) {
         var item = (numberOfBags > 0) ? "bag of corn" : "goose";
 
         steps.Sequence = "take a " + item + "; come back";
