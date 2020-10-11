@@ -30,6 +30,12 @@ function TripSteps(numberOfBags, numberOfGeese) {
         steps.IsValid = true;
         steps.Sequence = "take the bag of corn; come back|take a goose; bring back the bag of corn|take a goose; come back|take the bag of corn; come back";
 
+        return steps;
+    }
+
+    if(numberOfBags === 1 && numberOfGeese === 1){
+        steps.IsValid = true;
+        steps.Sequence = "take a bag of corn; come back|take a goose; come back";
 
         return steps;
     }
