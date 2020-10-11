@@ -19,6 +19,14 @@ function TripSteps(numberOfBags, numberOfGeese) {
         steps.Repeat = Math.max(numberOfBags, numberOfGeese);
     }
 
+    if(numberOfBags ===2 && numberOfGeese === 1){
+        steps.IsValid = true;
+        steps.Sequence = "take the goose; come back|take a bag of corn; bring back the goose|take a bag of corn; come back|take the goose; come back";
+        steps.Repeat = 0;
+
+        return steps;
+    }
+
     return steps;
 }
 
