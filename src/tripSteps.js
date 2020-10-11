@@ -11,10 +11,12 @@ function TripSteps(numberOfBags, numberOfGeese) {
         steps.Sequence = "Your corn will be eaten!";
     }
 
-    if (numberOfBags > 0 && numberOfGeese === 0) {
+    if (numberOfBags > 0 && numberOfGeese === 0 || numberOfBags === 0 && numberOfGeese > 0) {
+        var item = (numberOfBags > 0) ? "bag of corn" : "goose";
+
         steps.IsValid = true;
-        steps.Sequence = "take a bag of corn; come back";
-        steps.Repeat = numberOfBags;
+        steps.Sequence = "take a " + item + "; come back";
+        steps.Repeat = Math.max(numberOfBags, numberOfGeese);
     }
 
     return steps;
