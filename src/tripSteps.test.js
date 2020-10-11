@@ -65,3 +65,14 @@ it("test combination one bag of corn and one goose is valid", ()=>{
     expect(steps.Sequence).toBe("take a bag of corn; come back|take a goose; come back");
     expect(steps.Repeat).toBe(0);
 })
+
+it("test combination zero bags of corn and zero geese is valid", ()=>{
+    const numberOfBags = 0;
+    const numberOfGeese = 0;
+
+    let steps = new TripSteps(numberOfBags, numberOfGeese);
+
+    expect(steps.IsValid).toBe(true);
+    expect(steps.Sequence).toBe("");
+    expect(steps.Repeat).toBe(0);
+})
