@@ -53,3 +53,9 @@ test("display trip sequence when transporting one bag of corn and two geese", ()
 
     expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take the bag of corn; come backTrip 2: take a goose; bring back the bag of cornTrip 3: take a goose; come backTrip 4: take the bag of corn; come back");
 });
+
+test("display truncated steps when more than 10 and include instruction to repeat and then the final instruction", ()=>{
+    act(() => { render(<TripAdvisor numberOfBags={20} numberOfGeese={0} />, container) })
+
+    expect(container.querySelector("[data-testid='Trip-Sequence']").textContent).toBe("Trip 1: take a bag of corn; come backTrip 2: take a bag of corn; come backTrip 3: take a bag of corn; come backTrip 4: take a bag of corn; come backTrip 5: take a bag of corn; come backTrip 6: take a bag of corn; come backTrip 7: take a bag of corn; come backTrip 8: take a bag of corn; come backTrip 9: take a bag of corn; come backTrip 10: take a bag of corn; come back(repeat steps)Trip 20: take a bag of corn; come back");
+})
