@@ -9,19 +9,29 @@ class Home extends React.Component {
 
         this.state = {
             bagsOfCorn: 0,
-            numberOfGeese: 0
+            numberOfGeese: 0,
+            isInError: false
         };
 
-        this.handleChangeCorn = this.handleChangeCorn.bind(this);
-        this.handleChangeGeese = this.handleChangeGeese.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangeCorn(event) {
-        this.setState({ bagsOfCorn: parseInt(event.target.value) });
-    }
+    handleSubmit() {
+        var inputError = false;
+        var bags = parseInt(document.getElementById("bags-of-corn").value);
+        var geese = parseInt(document.getElementById("number-of-geese").value);
 
-    handleChangeGeese(event) {
-        this.setState({ numberOfGeese: parseInt(event.target.value) });
+        if (isNaN(bags)) {
+            bags = 0;
+            inputError = true;
+        }
+
+        if (isNaN(geese)) {
+            geese = 0;
+            inputError = true;
+        }
+
+        this.setState({ bagsOfCorn: bags, numberOfGeese: geese, isInError: inputError });
     }
 
     render() {
@@ -39,8 +49,8 @@ class Home extends React.Component {
                             <CalcInput
                                 bagsOfCorn={this.state.bagsOfCorn}
                                 numberOfGeese={this.state.numberOfGeese}
-                                changeCornHandler={this.handleChangeCorn}
-                                changeGreeseHandler={this.handleChangeGeese} />
+                                isError={this.state.isInError}
+                                submitHandler={this.handleSubmit} />
                         </div>
                         <div>
                             <TripAdvisor

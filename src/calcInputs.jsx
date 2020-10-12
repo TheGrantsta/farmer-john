@@ -1,44 +1,28 @@
 import React from "react";
 
 class CalcInput extends React.Component {
-    
     render() {
+        var errorMessage = (this.props.isError) ? "Please enter valid values!" : "";
+
         return (
             <div>
                 <h3 data-testid="Calc-Heading">Please select the number of bags of corn and geese...</h3>
                 <fieldset>
                     <form onSubmit={this.props.onSubmitHandler}>
                         <label>Bags of corn
-                        <select value={this.props.bagsOfCorn} onChange={this.props.changeCornHandler}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
+                            <input type="text" id="bags-of-corn" defaultValue={this.props.bagsOfCorn} />
                         </label>
                         <label>Geese
-                        <select value={this.props.numberOfGeese} onChange={this.props.changeGreeseHandler}>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
+                            <input type="text" id="number-of-geese" defaultValue={this.props.numberOfGeese} />
                         </label>
+                        <input type="button" value="calculate..." onClick={this.props.submitHandler} />
                     </form>
                 </fieldset>
+                <div>
+                    {errorMessage}
+                </div>
             </div>
+
         )
     }
 }
