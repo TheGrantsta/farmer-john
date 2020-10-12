@@ -10,7 +10,7 @@ label{
     padding: .5em;
 }
 
-select{
+input[type="text"]{
     display: inline-block;
     width: 6em;
     margin-top: .5em;
